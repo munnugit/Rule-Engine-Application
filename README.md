@@ -1,37 +1,33 @@
-# smart-elearning-framework
+Smart E-Learning Framework
+Rule Engine Application
+This repository contains a 3-tier Rule Engine application that enables dynamic creation, combination, and modification of rules to determine user eligibility based on attributes like age, department, income, and spend. An Abstract Syntax Tree (AST) is utilized to represent conditional rules, allowing for flexible and complex rule evaluations.
 
-# Rule Engine Application
-
-This is a simple 3-tier Rule Engine application that allows for dynamic creation, combination, and modification of rules to determine user eligibility based on attributes like age, department, income, and spend. The application uses an Abstract Syntax Tree (AST) to represent conditional rules.
-
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [File Structure](#file-structure)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Backend Setup](#backend-setup)
-  - [Frontend Setup](#frontend-setup)
-  - [Docker Setup](#docker-setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-- Create dynamic rules using an AST-based structure.
-- Combine and modify rules efficiently.
-- Store and manage rules using a PostgreSQL database.
-- Simple UI to create, combine, and test rules.
-- RESTful API to interact with rules and evaluate them.
-
-## Technologies Used
-- Frontend: React, Axios
-- Backend: Python, Flask, PostgreSQL
-- Database: PostgreSQL
-- Containerization: Docker, Docker Compose
-
-## File Structure
-
+Table of Contents
+Features
+Technologies Used
+File Structure
+Getting Started
+Prerequisites
+Backend Setup
+Frontend Setup
+Docker Setup
+Usage
+Contributing
+License
+Features
+Dynamic Rule Creation: Use an AST-based structure to create rules based on attributes.
+Flexible Rule Management: Modify, combine, and manage rules efficiently.
+Persistent Storage: Store rules in a PostgreSQL database.
+Intuitive UI: User-friendly interface for rule creation, modification, and testing.
+REST API: Easily integrate rule evaluation with external applications.
+Technologies Used
+Frontend: React, Axios
+Backend: Python, Flask
+Database: PostgreSQL
+Containerization: Docker, Docker Compose
+File Structure
+plaintext
+Copy code
 .
 ├── backend
 │   ├── app.py
@@ -54,79 +50,78 @@ This is a simple 3-tier Rule Engine application that allows for dynamic creation
 │   └── .env
 ├── docker-compose.yml
 └── README.md
+Getting Started
+Prerequisites
+Node.js (v16+)
+Python (v3.8+)
+PostgreSQL (v12+)
+Docker (Optional, for containerized setup)
+Backend Setup
+Setup PostgreSQL Database:
 
-
-## Getting Started
- rerequisites
-- Node.js (v16+)
-- Python (v3.8+)
-- PostgreSQL (v12+)
-- Docker (Optional, if using Docker setup)
-
-### Backend Setup
-1. Setup PostgreSQL Database:
-   Create a new database named `rule_engine`.
-   bash
-   psql -U your_username -c "CREATE DATABASE rule_engine;"
-   
-
-2. Install Dependencies:
-   bash
-   cd backend
-   pip install -r requirements.txt
- 
-
-3. Run the Backend Server:
-  bash
-   python app.py
-  
-   The server will be running at `http://localhost:5000`.
-
-### Frontend Setup
-1. Install Dependencies:
 bash
-   cd frontend
-   npm install
+Copy code
+psql -U your_username -c "CREATE DATABASE rule_engine;"
+Install Dependencies:
 
+bash
+Copy code
+cd backend
+pip install -r requirements.txt
+Run the Backend Server:
 
-2. Run the Frontend Server:
-   bash
-   npm start
-  
-   The application will be available at `http://localhost:3000`.
+bash
+Copy code
+python app.py
+The backend server will be running at http://localhost:5000.
 
-### Docker Setup
-1. Build and Run Containers:
-   bash
-   docker-compose up --build
+Frontend Setup
+Install Dependencies:
 
+bash
+Copy code
+cd frontend
+npm install
+Run the Frontend Server:
 
-2. Access Application:
-   - Frontend: `http://localhost:3000`
-   - Backend: `http://localhost:5000`
+bash
+Copy code
+npm start
+The frontend will be available at http://localhost:3000.
 
-3. Stopping Containers:
-  bash
-   docker-compose down
-  
+Docker Setup
+Build and Run Containers:
 
-## Usage
-1. Creating Rules:
-   Use the UI or POST request via API to define new rules using an expression like:
-  
-   (age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')
-   
+bash
+Copy code
+docker-compose up --build
+Access the Application:
 
-2. Combining Rules:
-   Combine existing rules dynamically and generate an AST.
+Frontend: http://localhost:3000
+Backend: http://localhost:5000
+Stopping Containers:
 
-3. Evaluating Rules:
-   Provide sample data (e.g., `{ "age": 35, "department": "Sales", "salary": 60000 }`) and test if the rule applies.
+bash
+Copy code
+docker-compose down
+Usage
+Creating Rules:
+Use the UI or API (POST request) to define new rules in the following format:
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a new Pull Request.
+java
+Copy code
+(age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')
+Combining Rules:
+Dynamically combine and evaluate rules, generating an AST for visualization and logical processing.
 
+Evaluating Rules:
+Test rules with sample data (e.g., { "age": 35, "department": "Sales", "salary": 60000 }) to verify if conditions are met.
+
+Contributing
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Create a Pull Request for review.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
