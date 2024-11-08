@@ -117,11 +117,3 @@ Dynamically combine and evaluate rules, generating an AST for visualization and 
 Evaluating Rules:
 Test rules with sample data (e.g., { "age": 35, "department": "Sales", "salary": 60000 }) to verify if conditions are met.
 
-Contributing
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Create a Pull Request for review.
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
